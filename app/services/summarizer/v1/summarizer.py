@@ -3,8 +3,8 @@ from transformers import T5Tokenizer, T5ForConditionalGeneration
 
 class Summarizer():
     """Summarizer"""
-    def __init__(self, input_data) -> None:
-        self.input_text = input_data.get("text", "")
+    def __init__(self, input_text) -> None:
+        self.input_text = input_text
 
     def post(self, max_length=150, model_name="t5-base"):
         """Summarize Text"""
@@ -23,4 +23,4 @@ class Summarizer():
 
         # Decode and return the summary
         summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
-        return {"recognized_text": summary}
+        return summary
