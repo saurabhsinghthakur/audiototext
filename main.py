@@ -30,6 +30,7 @@ async def summarizer(version: str, input_data: dict = Body(...)):
     recognized_text = my_instance(input_text).post()
     return {"recognized_text": recognized_text}
 
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8001, reload=True)
