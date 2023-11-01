@@ -11,6 +11,7 @@ class LoadModule():
 
     def load_module(self):
         """Load dynamic module"""
-        module = importlib.import_module(f'app.services.{self.product}.{self.version}.{self.product}')
+        module = importlib.import_module(
+            f'app.services.{self.product}.{self.version}.{self.product}')
         my_class = getattr(module, self.product.capitalize())
         return my_class
